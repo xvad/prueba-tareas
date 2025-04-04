@@ -25,6 +25,7 @@ interface AuthContextType {
   error: string;
   errorsFields: object;
   setErrorsFields: (errors: object) => void;
+  setError: (error: string) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -153,7 +154,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         fetchingMe,
         error,
         errorsFields,
-        setErrorsFields
+        setErrorsFields,
+        setError,
       }}
     >
       {children}

@@ -9,6 +9,7 @@ services:
       - "8000:8000"
     volumes:
       - ./backend-prueba-tareas:/var/www
+      - /var/www/vendor
     env_file:
       - .env.docker
     depends_on:
@@ -33,6 +34,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend-prueba-tareas:/app
+      - /app/node_modules
     working_dir: /app
     command: npm run dev -- -H 0.0.0.0
     environment:

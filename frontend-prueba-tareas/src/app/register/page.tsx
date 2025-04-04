@@ -1,13 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import Link from 'next/link';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import useHandleErrorFields from '@/hooks/useHandleErrorFields';
 
 export default function RegisterPage() {
-  const { register, fetchingRegister, error, errorsFields, setErrorsFields } = useAuth();
+  const { register, fetchingRegister, error, errorsFields, setErrorsFields, setError } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +17,13 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const { fieldErrorMessage, fieldHasError, onFocusRemove } = useHandleErrorFields();
+
+  useEffect(() => {
+    return () => {
+      setErrorsFields({});
+      setError('');
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
