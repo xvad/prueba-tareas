@@ -1,0 +1,20 @@
+{
+	"name": "Laravel Backend Dev",
+	"dockerComposeFile": "../../docker-compose.yml",
+	"service": "backend",
+	"workspaceFolder": "/var/www",
+	"settings": {
+	  "terminal.integrated.defaultProfile.linux": "bash"
+	},
+	"overrideCommand": false,
+	// "postCreateCommand": "[ ! -d vendor ] && composer install || echo 'vendor ya existe'",
+	"extensions": [
+	  "bmewburn.vscode-intelephense-client",
+	  "xdebug.php-debug",
+	  "shufo.vscode-blade-formatter",
+	  "amiralizadeh9480.laravel-extra-intellisense",
+	  "esbenp.prettier-vscode"
+	],
+	"remoteUser": "root"
+  }
+  
