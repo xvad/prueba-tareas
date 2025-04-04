@@ -27,7 +27,7 @@ prueba-tareas/
 - Composer
 - MySQL >= 8
 
-## 🐳 Opción 1: Ejecutar con Docker
+## 🐳 Opción 1: Ejecutar con Docker (Puede verse mas lento las llamadas por el tema de la configuración del contenedor que esta hecha para desarrollo y no para un ambiente productivo)
 
 1. Clona el repositorio:
 
